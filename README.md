@@ -1,6 +1,8 @@
 # serverless-offline-direct-lambda
 A Serverless Offline plugin that exposes lambdas with no API Gateway event via HTTP, to allow offline direct lambda-to-lambda interactions.
 
+This fork is updated to work with projects created using [Angular CLI](https://github.com/angular/angular-cli/blob/master/packages/angular/cli/README.md). 
+
 ## Setup
 Note - this requires the plugin 'serverless-offline'.
 

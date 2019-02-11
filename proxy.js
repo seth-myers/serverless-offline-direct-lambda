@@ -4,7 +4,12 @@ const path = require('path');
 function handler(event, context, callback) {
 
   const [targetHandlerFile, targetHandlerFunction] = event.targetHandler.split(".");
-  const target = require(path.resolve(__dirname, '../..', targetHandlerFile));
+
+  // this path won't resolve for projects built with Angular
+  // const target = require(path.resolve(__dirname, '../..', targetHandlerFile));
+
+  // Need to reference the build folder for Angular
+  const target = require(path.resolve(__dirname, '../..', '.build', targetHandlerFile));
 
   target[targetHandlerFunction](event.body, context, (error, response) => {
 
